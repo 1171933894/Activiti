@@ -16,8 +16,11 @@ import org.springframework.context.annotation.*;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 @Configuration
+/**
+ * 三个PropertySources支持多个目录，而且有优先级，可以替换掉程序默认的。
+ */
 @PropertySources({
-	
+
 	@PropertySource("classpath:/META-INF/activiti-app/activiti-app.properties"),
 	@PropertySource(value = "classpath:activiti-app.properties", ignoreResourceNotFound = true),
 	@PropertySource(value = "file:activiti-app.properties", ignoreResourceNotFound = true),
